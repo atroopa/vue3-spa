@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../pages/Home.vue'
 import IndexUser from '../pages/users/index.vue'
+import ShowUser from '../pages/users/ShowUser.vue'
 
 const routes = [
   {
@@ -11,7 +12,14 @@ const routes = [
   {
     path: '/users',
     name: 'users',
-    component: IndexUser
+    component: IndexUser,
+    children : [
+      {
+        path: ':id',
+        name: 'userId',
+        component: ShowUser,
+      }
+    ]
   }
 ]
 

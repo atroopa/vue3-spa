@@ -15,10 +15,9 @@
             </div>
 
         <div v-else class="grid grid-cols-3 gap-4">
-            <CardView v-for="user in users" :key="user.id" :user="user" />
+            <CardView :user="user" />
         </div>
     </div>
-    <router-view></router-view>
 </template>
 
 <!-- ---------- script ---------- -->
@@ -27,18 +26,21 @@
 import axios from 'axios'
 import { ref } from 'vue'
 import CardView from '@/components/users/CardView.vue'
+import {useRoute} from "vue-router"
 
 export default {
     components: {
         CardView
     },
     setup() {
-        const users = ref([])
+        const user = ref({})
         const loading = ref(true)
-        function getUsers() {
-            axios.get('https://jsonplaceholder.typicode.com/users')
+        const route = useRoute();
+
+        function getUser() {
+            axios.get(`https://jsonplaceholder.typicode.com/users/${route.params.id}`)
                 .then(function (response) {
-                    users.value = response.data
+                    user.value = response.data
                     loading.value = false
                 })
                 .catch(function (error) {
@@ -46,8 +48,8 @@ export default {
                 });
         }
 
-        getUsers()
-        return { users , loading}
+        getUser()
+        return { user , loading, route}
     }
 }
 </script>
