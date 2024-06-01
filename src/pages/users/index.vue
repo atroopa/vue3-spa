@@ -1,5 +1,5 @@
 <template>
-    <div class="flex items-center justify-center px-5 py-10">
+    <div v-if="route.params.id == undefind" class="flex items-center justify-center px-5 py-10">
 
             <div v-if="loading" role="status">
                 <svg aria-hidden="true" class="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
@@ -18,7 +18,7 @@
             <CardView v-for="user in users" :key="user.id" :user="user" />
         </div>
     </div>
-    <router-view></router-view>
+    <router-view v-else></router-view>
 </template>
 
 <!-- ---------- script ---------- -->
@@ -27,6 +27,7 @@
 import axios from 'axios'
 import { ref } from 'vue'
 import CardView from '@/components/users/CardView.vue'
+import { useRoute } from 'vue-router';
 
 export default {
     components: {
@@ -35,6 +36,8 @@ export default {
     setup() {
         const users = ref([])
         const loading = ref(true)
+        const route = useRoute()
+
         function getUsers() {
             axios.get('https://jsonplaceholder.typicode.com/users')
                 .then(function (response) {
@@ -47,7 +50,7 @@ export default {
         }
 
         getUsers()
-        return { users , loading}
+        return { users , loading, route}
     }
 }
 </script>
