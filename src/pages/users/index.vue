@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>Users</h1>
+        <h1>{{users}}</h1>
     </div>
 </template>
 
@@ -8,13 +8,15 @@
 
 <script>
 import axios from 'axios'
+import {ref} from 'vue'
 
 export default {
     setup() {
+        const users = ref([])
         function getUsers(){
-            axios.post('https://jsonplaceholder.typicode.com/users')
+            axios.get('https://jsonplaceholder.typicode.com/users')
             .then(function (response) {
-                console.log(response.data);
+                users.value = response.data
             })
             .catch(function (error) {
                 console.log(error);
@@ -22,6 +24,7 @@ export default {
         }
 
         getUsers()
+        return {users}
     }
 }
 </script>
