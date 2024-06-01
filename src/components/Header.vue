@@ -69,6 +69,7 @@
     </nav>
   </header>
 </template>
+
 <script>
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
@@ -80,6 +81,7 @@ export default {
   }
 }
 </script>
+
 <style scoped>
   /* Your CSS styles for active links */
   .text-indigo-500 {
