@@ -46,7 +46,7 @@ export default {
         }
 
         getUsers()
-        return { users }
+        return { users , loading}
     }
 }
 </script>
