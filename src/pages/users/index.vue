@@ -1,5 +1,5 @@
 <template>
-    <div v-if="route.params.id == undefind" class="flex items-center justify-center px-5 py-10">
+    
 
             <div v-if="loading" role="status">
                 <svg aria-hidden="true" class="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
@@ -17,8 +17,8 @@
         <div v-else class="grid grid-cols-3 gap-4">
             <CardView v-for="user in users" :key="user.id" :user="user" />
         </div>
-    </div>
-    <router-view v-else></router-view>
+    
+    <!-- <router-view v-else></router-view> -->
 </template>
 
 <!-- ---------- script ---------- -->
