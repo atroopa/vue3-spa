@@ -1,5 +1,4 @@
 <template>
-    
 
             <div v-if="loading" role="status">
                 <svg aria-hidden="true" class="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
@@ -17,7 +16,7 @@
         <div v-else class="grid grid-cols-3 gap-4">
             <CardView v-for="user in users" :key="user.id" :user="user" />
         </div>
-    
+
     <!-- <router-view v-else></router-view> -->
 </template>
 

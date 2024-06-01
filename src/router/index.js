@@ -17,7 +17,7 @@ const routes = [
     children : [
       {
         path: '',
-        name: 'users',
+        name: 'usersIndex',
         component: IndexUser,
       },
       {
