@@ -1,14 +1,14 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <header>
-    <nav class="bg-gray-200 shadow shadow-gray-300 w-100 px-8 md:px-auto">
+    <nav class="px-8 bg-gray-200 shadow shadow-gray-300 w-100 md:px-auto">
       <div
-        class="md:h-16 h-28 mx-auto md:px-4 container flex items-center justify-between flex-wrap md:flex-nowrap"
+        class="container flex flex-wrap items-center justify-between mx-auto md:h-16 h-28 md:px-4 md:flex-nowrap"
       >
         <div class="text-indigo-500 md:order-1">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="h-10 w-10"
+            class="w-10 h-10"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -21,23 +21,23 @@
             />
           </svg>
         </div>
-        <div class="text-gray-500 order-3 w-full md:w-auto md:order-2">
-          <ul class="flex font-semibold justify-between">
-            <li class="md:px-4 md:py-2 text-gray-900">
+        <div class="order-3 w-full text-gray-500 md:w-auto md:order-2">
+          <ul class="flex justify-between font-semibold">
+            <li class="text-gray-900 md:px-4 md:py-2">
               <router-link
                 :class="{ 'text-sky-500': isActive('/') }"
                 to="/"
                 >Home</router-link
               >
             </li>
-            <li class="md:px-4 md:py-2 text-gray-900">
+            <li class="text-gray-900 md:px-4 md:py-2">
               <router-link
                 :class="{ 'text-sky-500': isActive('/users') }"
                 to="/users"
                 >Users</router-link
               >
             </li>
-            <li class="md:px-4 md:py-2 text-gray-900">
+            <li class="text-gray-900 md:px-4 md:py-2">
               <router-link
                 :class="{ 'text-sky-500': isActive('/posts') }"
                 to="/posts"
@@ -48,11 +48,11 @@
         </div>
         <div class="order-2 md:order-3">
           <button
-            class="px-4 py-2 bg-indigo-500 hover:bg-indigo-600 text-gray-50 rounded-xl flex items-center gap-2"
+            class="flex items-center gap-2 px-4 py-2 bg-indigo-500 hover:bg-indigo-600 text-gray-50 rounded-xl"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5"
+              class="w-5 h-5"
               viewBox="0 0 20 20"
               fill="currentColor"
             >
